@@ -33,6 +33,22 @@ public class Rectangle {
 	   originY += dy;
   }
 
+  //method: scales rectangle by x,y individually
+  public void scale(double scaleX, double scaleY) {
+    this.width = this.width * scaleX;
+    this.height = this.height * scaleY;
+  }
+
+  public void scale(double scale) {
+    this.width = this.width * scale;
+    this.height = this.height * scale;
+  }
+
+  // method: isOverlappedWith 
+  public boolean isOverlappedWith(Rectangle r) {
+    
+
+  }
   // method: compute the area of the rectangle
   public double getArea() {
     return width * height;

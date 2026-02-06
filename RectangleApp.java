@@ -36,5 +36,10 @@ public class RectangleApp {
 		System.out.println("Width: "+myRect3.width+", Height: "+myRect3.height);
 		System.out.println("Origin: "+myRect3.originX+","+myRect3.originY);
 
+		myRect1.scale(0.5); // applies 0.5 scale to both x and y, changing width to 8, height to 4
+ 		myRect2.scale(1,3); // should change height to 24 with width unchanged
+ 		myRect3.scale(15,10); // should scale to width 15, height 10
+
+		System.out.println("Rect1 width: " + myRect1.width + ", height:" + myRect1.height);
 	}
 }
