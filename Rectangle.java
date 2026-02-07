@@ -72,13 +72,13 @@ public class Rectangle {
 
   //method: scales rectangle by x,y individually
   public void scale(double scaleX, double scaleY) {
-    this.width = this.width * scaleX;
-    this.height = this.height * scaleY;
+    ///this.width * scaleX;
+    ///this.height = this.height * scaleY;
   }
 
   public void scale(double scale) {
-    this.width = this.width * scale;
-    this.height = this.height * scale;
+    this.setWidth(this.getWidth() * scale);
+    this.setHeight(this.getHeight() * scale);
   }
 
   // method: isOverlappedWith 
