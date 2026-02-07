@@ -46,8 +46,30 @@ public class Rectangle {
 
   // method: isOverlappedWith 
   public boolean isOverlappedWith(Rectangle r) {
+    // Get the bounds of this rectangle
+    double thisLeft = this.originX;
+    double thisRight = this.originX + this.width;
+    double thisBottom = this.originY;
+    double thisTop = this.originY + this.height;
     
+    // Get the bounds of the other rectangle
+    double otherLeft = r.originX;
+    double otherRight = r.originX + r.width;
+    double otherBottom = r.originY;
+    double otherTop = r.originY + r.height;
+    
+    // Check if rectangles overlap
+    // They overlap if they intersect in both x and y dimensions
+    boolean xOverlap = thisLeft < otherRight && thisRight > otherLeft;
+    boolean yOverlap = thisBottom < otherTop && thisTop > otherBottom;
+    
+    return xOverlap && yOverlap;
 
+  }
+
+  // static method belongs to the class
+  public static boolean areOverlapping(Rectangle r1, Rectangle r2){
+    return r1.isOverlappedWith(r2);
   }
   // method: compute the area of the rectangle
   public double getArea() {
@@ -57,6 +79,14 @@ public class Rectangle {
   // method: compute the area of the rectangle
   public double getPerimeter() {
     return 2 * (width + height);
+  }
+
+  public double calcRatio() {
+    return width/height;
+  }
+
+  public boolean isSquare() {
+     return height == width || width - height <= 0.001 || height - width <= 0.001;
   }
   
 }
